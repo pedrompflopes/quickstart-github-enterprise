@@ -1,1 +1,6 @@
-// placeholder
+
+=== Launch into a new VPC
+include::quickstart-github-enterprise-master.adoc[]
+
+=== Launch into an existing VPC
+include::quickstart-github-enterprise.adoc[]

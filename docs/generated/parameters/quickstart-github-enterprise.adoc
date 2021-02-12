@@ -1,0 +1,50 @@
+
+. VPC Network Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Permitted IP range
+(`AccessCIDR`)|`**__Requires input__**`|The IP address range that can be used to access to the EC2 instance|Subnet Id
+(`SubnetId`)|`**__Requires input__**`|The Public subnet where the GitHub Enterprise instance will be launched|VPC ID
+(`VPCID`)|`**__Requires input__**`|The VPC to launch the GitHub Enterprise server
+|===
+.GitHubEnterprise License
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|GitHub License Location
+(`LicenseLocation`)|`**__Requires input__**`|Name of S3 bucket containing GitHub Enterprise license|GitHub License Filename
+(`GHELicense`)|`**__Requires input__**`|GitHub Enterprise License file that is uploaded to the License S3 bucket. Sign up for a trial license here: https://enterprise.github.com/trial
+|===
+.GitHub Enterprise Organization and Repository
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Initial Organization
+(`InitialOrganization`)|`initial-organization`|The initial organization to hold the GitHub Enterprise repository|Initial Repository
+(`InitialRepository`)|`initial-repository`|The initial repository to create
+|===
+.Site Admin User Information
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Management Password
+(`ManagementPassword`)|`**__Requires input__**`|Set the Console password for Github Enterprise (Passwords must be at least 7 characters long and include at least one number and one upper case letter)|Site Admin Username
+(`SiteAdminUsername`)|`**__Requires input__**`|Set the Site Admin Username|Site Admin User Email
+(`SiteAdminUserEmail`)|`**__Requires input__**`|Site Admin Email address|Site Admin User Password
+(`SiteAdminUserPassword`)|`**__Requires input__**`|Set the Console password for Github Enterprise (Passwords must be at least 7 characters long and include at least one number and one upper case letter)
+|===
+.Server Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Instance Type
+(`InstanceType`)|`m3.xlarge`|WebServer EC2 instance type|Key Pair Name
+(`KeyPairName`)|`**__Requires input__**`|Name of an existing EC2 KeyPair to enable SSH access to the instance|Volume Type
+(`VolumeType`)|`gp2`|Choose either GP2 or IO1. IO1 is recommended for more than 500 users|Provisioned IOPS
+(`ProvisionedIops`)|`**__Requires input__**`|Set the provisioned IOPs between 100 and 20000. Only set if you are choosing io1 for your volume type|Volume Size
+(`VolumeSize`)|`100`|The size of the EBS attached volume
+|===
+.AWS Quick Start Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Quick Start S3 Bucket Name
+(`QSS3BucketName`)|`aws-quickstart`|S3 bucket name for the Quick Start assets. Quick Start bucket name can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).|Quick Start S3 bucket region
+(`QSS3BucketRegion`)|`us-east-1`|The AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.|Quick Start S3 Key Prefix
+(`QSS3KeyPrefix`)|`quickstart-github-enterprise/`|S3 key prefix for the Quick Start assets. Quick Start key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/). It cannot start with forward slash (/) because it is automatically added.
+|===
