@@ -236,7 +236,7 @@ Resources:
         VolumeType: !Ref 'VolumeType'
       TemplateURL:
         !Sub
-          - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/quickstart-github-enterprise.template'
+          - 'https://github-pedro-key.s3.us-west-2.amazonaws.com/quickstart-github-enterprise.template'
           - S3Region: !If [UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion]
             S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
     Type: AWS::CloudFormation::Stack
@@ -247,7 +247,7 @@ Resources:
         VPCCIDR: !Ref 'VPCCIDR'
       TemplateURL:
         !Sub
-          - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/quickstart-github-enterprise-single-az-vpc.template'
+          - 'https://github-pedro-key.s3.us-west-2.amazonaws.com/quickstart-github-enterprise-single-az-vpc.template'
           - S3Region: !If [UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion]
             S3Bucket: !If [UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName]
     Type: AWS::CloudFormation::Stack
